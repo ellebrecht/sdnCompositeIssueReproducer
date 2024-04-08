@@ -13,9 +13,18 @@ java {
 
 repositories {
     mavenCentral()
+    maven {
+        name = "spring-milestone"
+        url = uri("https://repo.spring.io/milestone")
+    }
+    maven {
+        name = "spring-snapshot"
+        url = uri("https://repo.spring.io/snapshot")
+    }
 }
 
 dependencies {
+    implementation("org.springframework.data:spring-data-neo4j:7.2.5-GH-2884-SNAPSHOT")
     implementation("org.springframework.boot:spring-boot-starter-data-neo4j")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     compileOnly("org.projectlombok:lombok:1.18.32")
